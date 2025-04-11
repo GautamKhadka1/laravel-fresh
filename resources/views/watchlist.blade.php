@@ -19,7 +19,7 @@
       <div class="car-items-listing">
         @foreach ($cars as $car)
         <div class="car-item card">
-          <a href="{{ route('watchList.view') }}">
+          <a href="{{ route('car.view',['id'=>$car->id]) }}">
             <img
               src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}"
               alt="Car Image"

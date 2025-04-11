@@ -62,25 +62,10 @@
         <div class="card car-detailed-description">
           <h2 class="car-details-title">Detailed Description</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Mollitia delectus, vitae blanditiis praesentium doloremque
-            corporis aliquam eligendi dolorum cum ad, laudantium aut
-            reprehenderit iste, ratione vero amet at dolor. Non. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Fugiat, labore
-            nesciunt tenetur excepturi corrupti molestiae odio. Asperiores
-            eligendi repellat aliquam nulla neque delectus in, harum
-            exercitationem quae facere, illum obcaecati.
+            {{ $car->name }}
           </p>
           <p>
-            Step inside the luxurious cabin, where comfort meets
-            sophistication. The Silverstream X-200 envelops you in plush
-            leather seats with ergonomic design, ensuring every journey is a
-            retreat of indulgence. Equipped with state-of-the-art
-            infotainment and navigation systems, along with advanced
-            driver-assist features, this car offers a seamless blend of
-            convenience and safety. Whether cruising through city streets or
-            embarking on a cross-country adventure, the Silverstream X-200
-            promises an exhilarating driving experience like no other.
+            {{ $car->year }}
           </p>
         </div>
 
