@@ -28,12 +28,19 @@ Route::get('/car/add-new', function () {
 Route::get('/my-cars', function () {
     return view('my_cars');
 })->name('myCars');
+
 Route::get('/watchlist', function () {
     return view('watchlist');
 })->name('watchList');
-Route::get('/watchlist/view', function () {
-    return view('view');
-})->name('watchList.view');
+Route::get('/car/view/{id}', function ($id) {
+    $car = Car::find($id);
+
+    if ($car) {
+        return view('view', compact('car'));
+    }
+
+    return redirect()->route('watchList')->with('error', 'Car not found');
+})->name('car.view');
 
 Route::get('/watchlist/{id}', function ($id) {
 
