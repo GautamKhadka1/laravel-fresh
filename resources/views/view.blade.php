@@ -2,28 +2,28 @@
 @section('content')
 <main>
   <div class="container">
-    <h1 class="car-details-page-title">Lexus NX200t - 2016</h1>
-    <div class="car-details-region">New Jersey - 2 days ago</div>
+    <h1 class="car-details-page-title">{{ $car->name??'Lexus NX200t - 2016' }}</h1>
+    <div class="car-details-region">{{ $car->location??'New Jersey - 2 days ago' }}</div>
 
     <div class="car-details-content">
       <div class="car-images-and-description">
         <div class="car-images-carousel">
           <div class="car-image-wrapper">
             <img
-              src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}"
+              src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}"
               alt=""
               class="car-active-image"
               id="activeImage"
             />
           </div>
           <div class="car-image-thumbnails">
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
-            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
+            <img src="{{ asset('/storage/img/cars/Lexus-RX200t-2016/1.jpeg')??$car->image }}" alt="Car Image" />
           </div>
           <button class="carousel-button prev-button" id="prevButton">
             <svg
@@ -62,208 +62,54 @@
         <div class="card car-detailed-description">
           <h2 class="car-details-title">Detailed Description</h2>
           <p>
-            {{ $car->name }}
+            {{ $car->description['detail'] ?? 'Lorem Epsum' }}
           </p>
-          <p>
-            {{ $car->year }}
-          </p>
+        
         </div>
 
         <div class="card car-detailed-description">
           <h2 class="car-details-title">Car Specifications</h2>
 
           <ul class="car-specifications">
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Air Conditioning
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Power Windows
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Power Door Locks
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              ABS
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: red"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-
-              Cruise Control
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: red"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-
-              Bluetooth Connectivity
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: red"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-
-              Remote Start
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              GPS Navigation System
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Heated Seats
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: rgb(0, 192, 102)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Climate Control
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: red"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-
-              Rear Parking Sensors
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="color: red"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-
-              Leather Seats
-            </li>
+            @foreach($car->specification as $feature => $enabled)
+        <li>
+            @if($enabled)
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style="color: rgb(0, 192, 102)"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+                {{ $feature }}
+            @else
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style="color: red"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+                {{ $feature }}
+            @endif
+        </li>
+    @endforeach
           </ul>
         </div>
       </div>
       <div class="car-details card">
         <div class="flex items-center justify-between">
-          <p class="car-details-price">$25,000</p>
+          <p class="car-details-price">${{ $car->price??'25,000' }}</p>
           <button class="btn-heart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -285,10 +131,12 @@
         <hr />
         <table class="car-details-table">
           <tbody>
+            @foreach ($car->description as $key => $value )
             <tr>
-              <th>Maker</th>
-              <td>Lexus</td>
+              <th>{{$key}}</th>
+              <td>{{$value}}</td>
             </tr>
+            @endforeach
             <tr>
               <th>Model</th>
               <td>NX200t</td>

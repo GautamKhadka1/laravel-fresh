@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('name');
             $table->json('description');
+            $table->json('specification');
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@
 @endif
 
 
+
 <main>
   <!-- New Cars -->
   <section>
@@ -43,28 +44,19 @@
               </button>
             </div>
             <h2 class="car-item-title">{{ $car->name??'2016 - Lexus RX200t' }}</h2>
-            <p class="car-item-price">{{ $car->price??'$25,000' }}</p>
+            <p class="car-item-price">$ {{ $car->price??'25,000' }}</p>
             <hr />
+
+
+            {{-- @foreach ($car->description as $description) --}}
             <p class="m-0">
-                {
-                    cars{
-                        description{
-                            year
-                        }
-                    }
-                }
+              <span class="car-item-badge">{{ $car->description['year'] ?? '' }}</span>
+              <span class="car-item-badge">{{ $car->description['color'] ?? '' }}</span>
+              <span class="car-item-badge">{{ $car->description['mileage'] ?? '' }}</span>
+          </p>
+            {{-- @endforeach --}}
 
 
-            @foreach ($car->description as $description)
-            <p class="m-0">
-                <span class="car-item-badge">{{ $description->year ?? '' }}</span>
-                <span class="car-item-badge">{{ $description->color ?? '' }}</span>
-                <span class="car-item-badge">{{ $description->milage ?? '' }}</span>
-            </p>
-
-            @endforeach
-
-            </p>
           </div>
         </div>
         @endforeach

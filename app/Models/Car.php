@@ -15,10 +15,11 @@ class Car extends Model
         'price',
         'name',
         'description',
+        'specification',
     ];
 
     protected $casts = [
         'description' => 'array', // since it's stored as JSON
-
+        'specification' => 'array',
     ];
 }
