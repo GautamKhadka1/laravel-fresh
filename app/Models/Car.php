@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'image',
+        'location',
+        'price',
+        'name',
+        'description',
+    ];
+
+    protected $casts = [
+        'description' => 'array', // since it's stored as JSON
+
+    ];
 }

@@ -10,20 +10,20 @@
         <div class="car-images-carousel">
           <div class="car-image-wrapper">
             <img
-              src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+              src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}"
               alt=""
               class="car-active-image"
               id="activeImage"
             />
           </div>
           <div class="car-image-thumbnails">
-            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/2.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/3.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/4.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/5.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/6.jpeg" alt="" />
-            <img src="/img/cars/Lexus-RX200t-2016/7.jpeg" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
+            <img src="{{ asset('storage//img/cars/Lexus-RX200t-2016/1.jpeg') }}" alt="" />
           </div>
           <button class="carousel-button prev-button" id="prevButton">
             <svg
