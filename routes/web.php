@@ -56,4 +56,3 @@ Route::get('/login', [AuthController :: class, 'login' ])->name('loginRoute');
 Route::get('/register', [AuthController :: class, 'register' ])->name('register');
 Route::post('/login', [AuthController :: class, 'authenticate' ])->name('storeLogin');
 Route::post('/register', [AuthController :: class, 'storeUser' ])->name('storeUser');
-
