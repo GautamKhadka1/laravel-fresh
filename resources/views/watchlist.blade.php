@@ -46,6 +46,15 @@
             <p class="car-item-price">{{ $car->price??'$25,000' }}</p>
             <hr />
             <p class="m-0">
+                {
+                    cars{
+                        description{
+                            year
+                        }
+                    }
+                }
+
+
             @foreach ($car->description as $description)
             <p class="m-0">
                 <span class="car-item-badge">{{ $description->year ?? '' }}</span>
@@ -54,9 +63,6 @@
             </p>
 
             @endforeach
-
-
-
 
             </p>
           </div>
